@@ -1,11 +1,21 @@
-<!doctype html>
 <html>
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>VMA</title>
+    <link rel="canonical" href="/">
 
-    <link rel="stylesheet" href="/style.css">
+    <script>
+        /* Cut the mustard */
+        if ('querySelector' in document && 'addEventListener' in window) {
+            document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+        }
+
+    </script>
+
+    <link rel="stylesheet" href="/assets/stylesheets/main.css">
     <script type="text/javascript" src="/assets/external-js/Tone.js"></script>
     <script type="text/javascript" src="/assets/external-js/d3.v5.min.js"></script>
 
@@ -259,41 +269,41 @@
         <div class="card__content">Human ACE2</div>
         <div class="card__contentBox">
             <p><br><br></p>
-            <p>Angiotensin-converting enzyme 2 (ACE2) is a protein found on endothelial cells that line our arteries, lungs, and intestines. ACE2 is located on the cell surface and spans the cell membranes making it suitable for use as an entry point by viruses. ACE2 is known to be the main entry point of multiple coronaviruses including SARS-CoV-2.</p> 
+            <p>Angiotensin-converting enzyme 2 (ACE2) is a protein found on endothelial cells that line our arteries, lungs, and intestines. ACE2 is located on the cell surface and spans the cell membranes making it suitable for use as an entry point by viruses. ACE2 is known to be the main entry point of multiple coronaviruses including SARS-CoV-2.</p>
             <p>Click the play button to find out what the protein sounds like.</p>
             <button class="button" title="play" id="btnPlayACE2" onclick="ACE2Click();" x=5, y=5>
                 <svg class="no" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z" /></svg>
             </button>
-            
+
             <p>Included below is a 3D ‘ribbon’ view of the protein.</p>
-            
+
             <p class=""> <img src="/assets/img/hACE2.png" alt="SARS-CoV-2" style="width:19rem;"></p>
-            
+
         </div>
         <footer class="card__footer"><img src="assets/img/smol_sds.png" /><span>Saad Saleem | UVA Data Science</span></footer>
     </div>
-    
+
     <div class="card card--ncov">
         <div class="card__content">SARS-CoV-2 spike</div>
         <div class="card__contentBox">
             <div class="card_contentBody">
                 <p><br><br></p>
                 <p>Like other coronaviruses, SARS-CoV-2 consists of an RNA surrounded by a membrane containing proteins. One of these proteins, the spike glycoprotein, is responsible for binding to proteins on the surface of human epithelial cells leading to infection. The virus is then able to use cellular machinery to produce virions may reach other target cells for infection. Click the play button to find out what the SARS-CoV-2 spike protein sounds like.</p>
-                
+
                 <p>
                     <button class="button" title="play" id="btnPlaynCov" onclick="nCovClick();" x=5, y=5>
                         <svg class="no" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                             <path d="M8 5v14l11-7z" /></svg>
                     </button>
                 </p>
-                
+
                 <p>To develop treatments against the virus and take away it’s virulence studying and targeting the spike protein is paramount.</p>
-                
+
                 <p>Included below is a 3D ‘ribbon’ view of the protein.</p>
-                
+
                 <p> <img src="/assets/img/ncov.png" alt="SARS-CoV-2" style="width:19rem;"> </p>
-                
+
             </div>
         </div>
         <footer class="card__footer__sarc"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1050.6 120.4">
@@ -602,7 +612,7 @@
                         <td style="width:10px;height:10px;padding: -5px; background-clip:padding-box;background-color:#8B8C8D;"></td>
                     </tr>
                 </table>
-                
+
                 <!--insert AA chord coding-->
 
                 <p>In addition to the primary sequence, this representation of proteins encodes secondar structure in the form of the duration of the notes. The table below shows the mappings.</p>
@@ -629,7 +639,7 @@
         </div>
         <footer class="card__footer"><img src="assets/img/smol_sds.png" /><span>Saad Saleem | UVA Data Science</span></footer>
     </div>
-    
+
     <div id=infoPopUp"" class="infoCard">
         <!--add hidden-->
         <span id="closeInfo" class="closeButton" onclick="closePopUp()">&times;</span>
@@ -639,13 +649,13 @@
 
             <p>Just like viruses exploit the properties of the protein sequence and structure to infect their hosts, we can utilize the sequential and structural information gained through analysis of sequences and structure of viral proteins to find the weak spots and target viruses to remove their ability to bind to target calls and infect them.</p>
 
-            <p>This visualization looks at whether proteins can be represented as music and abstracted accompanying visuals effectively and if so, what value does that representation add  when used in conjunction with more traditional approaches. I think that sonic and visual representations that follow a sequential approach will allow for a system of pattern recognition in protein sequences to find and identify interesting regions. </p>
+            <p>This visualization looks at whether proteins can be represented as music and abstracted accompanying visuals effectively and if so, what value does that representation add when used in conjunction with more traditional approaches. I think that sonic and visual representations that follow a sequential approach will allow for a system of pattern recognition in protein sequences to find and identify interesting regions. </p>
             <h3>How to Use</h3>
-                <p>Click one of the cards associated with proteins above to learn more about it and explore it's properties through sound and color. </p>
+            <p>Click one of the cards associated with proteins above to learn more about it and explore it's properties through sound and color. </p>
 
         </div>
     </div>
-    
+
     <div id="vis-wrap">
         <div id="vis-bg"></div>
         <div id="vis">
