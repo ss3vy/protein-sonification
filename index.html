@@ -15,12 +15,12 @@
 
     </script>
 
-    <link rel="stylesheet" href="/assets/stylesheets/main.css">
-    <script type="text/javascript" src="/assets/external-js/Tone.js"></script>
-    <script type="text/javascript" src="/assets/external-js/d3.v5.min.js"></script>
+    <link rel="stylesheet" href="/protein-sonification/assets/stylesheets/main.css">
+    <script type="text/javascript" src="/protein-sonification/assets/external-js/Tone.js"></script>
+    <script type="text/javascript" src="/protein-sonification/assets/external-js/d3.v5.min.js"></script>
 
     <script>
-        const dir = '/assets/sequence_data/'
+        const dir = '/protein-sonification/assets/sequence_data/'
         let nCov;
         let ACE2;
         var amount = 0.5;
@@ -174,26 +174,26 @@
         };
 
         aaChords_lst = {
-            'C3': 'assets/instruments/piano/chords/CM3.mp3',
-            'D3': 'assets/instruments/piano/chords/DM3.mp3',
-            "E3": 'assets/instruments/piano/chords/EM3.mp3',
-            "F3": 'assets/instruments/piano/chords/FM3.mp3',
-            "G3": 'assets/instruments/piano/chords/GM3.mp3',
-            "G5": 'assets/instruments/piano/chords/GM3FI.mp3',
-            "A3": 'assets/instruments/piano/chords/AM3.mp3',
-            "A5": 'assets/instruments/piano/chords/AM3FI.mp3',
-            "B3": 'assets/instruments/piano/chords/BM3.mp3',
-            "B5": 'assets/instruments/piano/chords/BM3FI.mp3',
-            "C4": 'assets/instruments/piano/chords/CM4.mp3',
-            "D4": 'assets/instruments/piano/chords/DM4.mp3',
-            "E4": 'assets/instruments/piano/chords/EM4.mp3',
-            "E6": 'assets/instruments/piano/chords/EM4FI.mp3',
-            "F4": 'assets/instruments/piano/chords/FM4.mp3',
-            "F6": 'assets/instruments/piano/chords/FM4FI.mp3',
-            "G4": 'assets/instruments/piano/chords/GM4.mp3',
-            "G6": 'assets/instruments/piano/chords/GM4FI.mp3',
-            "A4": 'assets/instruments/piano/chords/AM4.mp3',
-            "A6": 'assets/instruments/piano/chords/AM4FI.mp3'
+            'C3': '/protein-sonification/assets/instruments/piano/chords/CM3.mp3',
+            'D3': '/protein-sonification/assets/instruments/piano/chords/DM3.mp3',
+            "E3": '/protein-sonification/assets/instruments/piano/chords/EM3.mp3',
+            "F3": '/protein-sonification/assets/instruments/piano/chords/FM3.mp3',
+            "G3": '/protein-sonification/assets/instruments/piano/chords/GM3.mp3',
+            "G5": '/protein-sonification/assets/instruments/piano/chords/GM3FI.mp3',
+            "A3": '/protein-sonification/assets/instruments/piano/chords/AM3.mp3',
+            "A5": '/protein-sonification/assets/instruments/piano/chords/AM3FI.mp3',
+            "B3": '/protein-sonification/assets/instruments/piano/chords/BM3.mp3',
+            "B5": '/protein-sonification/assets/instruments/piano/chords/BM3FI.mp3',
+            "C4": '/protein-sonification/assets/instruments/piano/chords/CM4.mp3',
+            "D4": '/protein-sonification/assets/instruments/piano/chords/DM4.mp3',
+            "E4": '/protein-sonification/assets/instruments/piano/chords/EM4.mp3',
+            "E6": '/protein-sonification/assets/instruments/piano/chords/EM4FI.mp3',
+            "F4": '/protein-sonification/assets/instruments/piano/chords/FM4.mp3',
+            "F6": '/protein-sonification/assets/instruments/piano/chords/FM4FI.mp3',
+            "G4": '/protein-sonification/assets/instruments/piano/chords/GM4.mp3',
+            "G6": '/protein-sonification/assets/instruments/piano/chords/GM4FI.mp3',
+            "A4": '/protein-sonification/assets/instruments/piano/chords/AM4.mp3',
+            "A6": '/protein-sonification/assets/instruments/piano/chords/AM4FI.mp3'
         };
 
         var aaChords = new Tone.Sampler(aaChords_lst,
@@ -278,10 +278,10 @@
 
             <p>Included below is a 3D ‘ribbon’ view of the protein.</p>
 
-            <p class=""> <img src="/assets/img/hACE2.png" alt="SARS-CoV-2" style="width:19rem;"></p>
+            <p class=""> <img src="/protein-sonification/assets/img/hACE2.png" alt="SARS-CoV-2" style="width:19rem;"></p>
 
         </div>
-        <footer class="card__footer"><img src="assets/img/smol_sds.png" /><span>Saad Saleem | UVA Data Science</span></footer>
+        <footer class="card__footer"><img src="/protein-sonification/assets/img/smol_sds.png" /><span>Saad Saleem | UVA Data Science</span></footer>
     </div>
 
     <div class="card card--ncov">
@@ -302,7 +302,7 @@
 
                 <p>Included below is a 3D ‘ribbon’ view of the protein.</p>
 
-                <p> <img src="/assets/img/ncov.png" alt="SARS-CoV-2" style="width:19rem;"> </p>
+                <p> <img src="/protein-sonification/assets/img/ncov.png" alt="SARS-CoV-2" style="width:19rem;"> </p>
 
             </div>
         </div>
@@ -502,7 +502,7 @@
         <div class="card__contentBox">
             <div class="card_contentBody">
                 <p>A different color represents each amino acid, which posesses distinct physicochemical properties. The Venn diagram below illustrates the color encodings for amino similar amino acids.</p>
-                <p class=""> <img src="/assets/img/venn.png" alt="Color Venn Diagram" style="width:19rem;"></p>
+                <p class=""> <img src="/protein-sonification/assets/img/venn.png" alt="Color Venn Diagram" style="width:19rem;"></p>
                 <p>A table of colors with their corresponding amino acids is included below.</p>
                 <!--table of AA, color-->
                 <table>
@@ -637,7 +637,7 @@
                 </table>
             </div>
         </div>
-        <footer class="card__footer"><img src="assets/img/smol_sds.png" /><span>Saad Saleem | UVA Data Science</span></footer>
+        <footer class="card__footer"><img src="/protein-sonification/assets/img/smol_sds.png" /><span>Saad Saleem | UVA Data Science</span></footer>
     </div>
 
     <div id=infoPopUp"" class="infoCard">
