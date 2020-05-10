@@ -1,18 +1,16 @@
+**Note:** The dynamic visual was developed to work with the Firefox browser ONLY. Any version >= 75.0 should suffice.  
+
+The spike glycoprotein is limited to the first 500 residues in the sequence for smoother loading in the web version. The full sequence is included under ```/assets/sequence_data```.
 # Viral Musical Anatomy 
-## SARC 5400 Final Project | Saad Saleem
-Visualizing protein sequence and structure data as abstracted shapes that encode  multi-dimesional information. 
+Visualizing protein sequence and structure data as abstracted shapes & sound that encode multi-dimesional information. 
 
 # Dynamic Visual
-**Note:** The dynamic visual was developed to work with the Firefox browser ONLY. Any version >= 75.0 should suffice. Due to time constraints, learning new frameworks, working through the issues to implement them, and coping with the rest of the course load for the semester I did not have time to ensure that the web page functions fully with other browsers.
-
 The dynamic visual can be launched through the ```index.html``` file.
 
 # Static Visual
+![Static Comparison](https://raw.githubusercontent.com/ss3vy/protein-sonification/master/assets/static/static%20visual.png)
 
 Can be accessed through ```assets/static/static visual.pdf``` or the ```.ai``` file in the same directory.
-
-# Narrative
-narrative.pdf
 
 # Included Files
 The following files are included with the project submission:
