@@ -222,7 +222,14 @@ tr:hover {
     cursor: not-allowed;
 }
 
+
 .button.playing {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+}
+
+.button.notAllowed {
     border: 1px solid #999999;
     background-color: #cccccc;
     color: #666666;
@@ -331,4 +338,15 @@ h1{
     left:20px;
     display: block;
     font-size:8vh;
+}
+
+h2{
+    position: absolute;
+    font-family:"Trebuchet MS", Helvetica, sans-serif;
+    font-weight: 450;
+    z-index: 1;
+    top: 6.1vh;
+    left:20px;
+    display: block;
+    font-size:2vh;
 }

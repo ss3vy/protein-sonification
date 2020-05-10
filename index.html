@@ -5,24 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>VMA</title>
+    
     <base href="https://ss3vy.github.io/protein-sonification/">
     <link rel="canonical" href="/protein-sonification/">
+    <link rel='shortcut icon' type='image/png' href='/protein-sonification/assets/img/favicon.png'/>
     
     <script>
         /* Cut the mustard */
         if ('querySelector' in document && 'addEventListener' in window) {
             document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
         }
-
     </script>
-    <link rel="stylesheet" href="/assets/stylesheets/main.css">
+
     <link rel="stylesheet" href="/protein-sonification/assets/stylesheets/main.css">
-    
+	
     <script type="text/javascript" src="/protein-sonification/assets/external-js/Tone.js"></script>
     <script type="text/javascript" src="/protein-sonification/assets/external-js/d3.v5.min.js"></script>
-	
+
     <script>
-        const dir = '/protein-sonification/assets/sequence_data/'
+        const dir = '/protein-sonification/sequence_data/'
         let nCov;
         let ACE2;
         var amount = 0.5;
@@ -41,15 +42,17 @@
         }
 
         function nCovClick() {
+            document.getElementById('btnPlaynCov').innerHTML = "Stop";
             document.getElementById('btnPlayACE2').disabled = true;
             document.getElementById('btnPlayACE2').classList.add('playing');
             playSeq(nCov);
         }
 
         function ACE2Click() {
+            document.getElementById('btnPlayACE2').innerHTML = "Stop";
             document.getElementById('btnPlaynCov').disabled = true;
             document.getElementById('btnPlaynCov').classList.add('playing');
-            playSeq(ACE2)
+            playSeq(ACE2);
         }
 
         function loadFiles() {
@@ -176,26 +179,26 @@
         };
 
         aaChords_lst = {
-            'C3': '/protein-sonification/assets/instruments/piano/chords/CM3.mp3',
-            'D3': '/protein-sonification/assets/instruments/piano/chords/DM3.mp3',
-            "E3": '/protein-sonification/assets/instruments/piano/chords/EM3.mp3',
-            "F3": '/protein-sonification/assets/instruments/piano/chords/FM3.mp3',
-            "G3": '/protein-sonification/assets/instruments/piano/chords/GM3.mp3',
-            "G5": '/protein-sonification/assets/instruments/piano/chords/GM3FI.mp3',
-            "A3": '/protein-sonification/assets/instruments/piano/chords/AM3.mp3',
-            "A5": '/protein-sonification/assets/instruments/piano/chords/AM3FI.mp3',
-            "B3": '/protein-sonification/assets/instruments/piano/chords/BM3.mp3',
-            "B5": '/protein-sonification/assets/instruments/piano/chords/BM3FI.mp3',
-            "C4": '/protein-sonification/assets/instruments/piano/chords/CM4.mp3',
-            "D4": '/protein-sonification/assets/instruments/piano/chords/DM4.mp3',
-            "E4": '/protein-sonification/assets/instruments/piano/chords/EM4.mp3',
-            "E6": '/protein-sonification/assets/instruments/piano/chords/EM4FI.mp3',
-            "F4": '/protein-sonification/assets/instruments/piano/chords/FM4.mp3',
-            "F6": '/protein-sonification/assets/instruments/piano/chords/FM4FI.mp3',
-            "G4": '/protein-sonification/assets/instruments/piano/chords/GM4.mp3',
-            "G6": '/protein-sonification/assets/instruments/piano/chords/GM4FI.mp3',
-            "A4": '/protein-sonification/assets/instruments/piano/chords/AM4.mp3',
-            "A6": '/protein-sonification/assets/instruments/piano/chords/AM4FI.mp3'
+            'C3': '/protein-sonification/instruments/piano/chords/CM3.mp3',
+            'D3': '/protein-sonification/instruments/piano/chords/DM3.mp3',
+            "E3": '/protein-sonification/instruments/piano/chords/EM3.mp3',
+            "F3": '/protein-sonification/instruments/piano/chords/FM3.mp3',
+            "G3": '/protein-sonification/instruments/piano/chords/GM3.mp3',
+            "G5": '/protein-sonification/instruments/piano/chords/GM3FI.mp3',
+            "A3": '/protein-sonification/instruments/piano/chords/AM3.mp3',
+            "A5": '/protein-sonification/instruments/piano/chords/AM3FI.mp3',
+            "B3": '/protein-sonification/instruments/piano/chords/BM3.mp3',
+            "B5": '/protein-sonification/instruments/piano/chords/BM3FI.mp3',
+            "C4": '/protein-sonification/instruments/piano/chords/CM4.mp3',
+            "D4": '/protein-sonification/instruments/piano/chords/DM4.mp3',
+            "E4": '/protein-sonification/instruments/piano/chords/EM4.mp3',
+            "E6": '/protein-sonification/instruments/piano/chords/EM4FI.mp3',
+            "F4": '/protein-sonification/instruments/piano/chords/FM4.mp3',
+            "F6": '/protein-sonification/instruments/piano/chords/FM4FI.mp3',
+            "G4": '/protein-sonification/instruments/piano/chords/GM4.mp3',
+            "G6": '/protein-sonification/instruments/piano/chords/GM4FI.mp3',
+            "A4": '/protein-sonification/instruments/piano/chords/AM4.mp3',
+            "A6": '/protein-sonification/instruments/piano/chords/AM4FI.mp3'
         };
 
         var aaChords = new Tone.Sampler(aaChords_lst,
@@ -214,6 +217,7 @@
 
 <body onload="initAll()">
     <h1>viral musical anatomy</h1>
+    <h2>Can we recognize useful patterns in protein sequences through sound and color?</h2>
 
     <button class="infoButton" title="GitHub" id="launchGitHub" onclick="window.location.href = 'https://github.com/ss3vy';" x="5" , y="5">
         <rect x="192" y="192" width="42.667" height="128" />
@@ -274,8 +278,18 @@
             <p>Angiotensin-converting enzyme 2 (ACE2) is a protein found on endothelial cells that line our arteries, lungs, and intestines. ACE2 is located on the cell surface and spans the cell membranes making it suitable for use as an entry point by viruses. ACE2 is known to be the main entry point of multiple coronaviruses including SARS-CoV-2.</p>
             <p>Click the play button to find out what the protein sounds like.</p>
             <button class="button" title="play" id="btnPlayACE2" onclick="ACE2Click();" x=5, y=5>
-                <svg class="no" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z" /></svg>
+                Play
+<!--
+                <svg class="playIcon" id= "playIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" display="inline-block">
+                    <path d="M8 5v14l11-7z" />
+                </svg>
+                
+                <svg class="stopIcon" id="stopIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" display="none">
+                <path d="M0 0h24v24H0z"/>
+                </svg>
+-->
+                
+                
             </button>
 
             <p>Included below is a 3D ‘ribbon’ view of the protein.</p>
@@ -295,8 +309,16 @@
 
                 <p>
                     <button class="button" title="play" id="btnPlaynCov" onclick="nCovClick();" x=5, y=5>
-                        <svg class="no" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                            <path d="M8 5v14l11-7z" /></svg>
+                        Play
+<!--
+                <svg class="playIcon" id= "playIcon2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" display='inline-block'>
+                    <path d="M8 5v14l11-7z" />
+                </svg>
+                
+                <svg class="stopIcon" id="stopIcon2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" display="none">
+                <path d="M0 0h24v24H0z"/>
+                </svg>
+-->
                     </button>
                 </p>
 
@@ -637,9 +659,19 @@
                         <td>2.0s</td>
                     </tr>
                 </table>
+                
+                <p>Each amino acid has been assigned a chord that plays upon encountering the specific amino acid. Starting one ocatve below middle C, the chord assignments (with three latter amino acid codes) are as follows: </p> 
+                <p> Trp-C, Met-D, Pro-E, His-F, {Tyr-G (RP), Phe-G (FI)}, {Leu-A(RP), Ile-A (FI)}, {Val-B (RP), Ala-B (FI)}, Cys-C, Gly-D, {Thr-E (RP), Ser-E (FI)}, {Gln-F (RP), Asn-F(FI)}, {Glu-G (RP), Asp-G (FI)}, {Arg-A (RP), Lys-A (FI)}. 
+                <p>Where RP is the root progression of the chord and FI is the first inversion. For example cysteine is C Major.</p>
+                
+                
+                
+                
+                
+                
             </div>
         </div>
-        <footer class="card__footer"><img src="/protein-sonification/assets/img/smol_sds.png" /><span>Saad Saleem | UVA Data Science</span></footer>
+        <footer class="card__footer"><img src='/protein-sonification/img/smol_sds.png' /><span>Saad Saleem | UVA Data Science</span></footer>
     </div>
 
     <div id=infoPopUp"" class="infoCard">
